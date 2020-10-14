@@ -1,9 +1,22 @@
 const path = require("path");
 const rules = [
   {
-    test: /\.tsx?/,
+    test: [/\.tsx?/, /\.js$/, /\.jsx$/],
     exclude: /node_modules/,
     loader: "babel-loader",
+    query: {
+      presets: ["@babel/env", "@babel/react"],
+    },
+  },
+  {
+    test: /\.(sa|sc|c)ss?/,
+    use: [
+      "style-loader",
+      MiniCSSExtractPlugin.loader,
+      "css-loader",
+      "scss-loader",
+      "sass-loader",
+    ],
   },
 ];
 
