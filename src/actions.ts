@@ -4,12 +4,13 @@ export const fetchDataAction = (dispatch: any) => {
     const URL = 'https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes'
     fetch(URL)
         .then(res => res.json())
-        .then(data => (
-            dispatch({
+        .then(data => {
+            console.log(data)
+            return dispatch({
                 type: 'FETCH_DATA',
                 payload: data._embedded.episodes
             })
-        ))
+        })
         .catch(err => console.log(err))
 }
 

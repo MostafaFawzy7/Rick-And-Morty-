@@ -7,17 +7,7 @@ const rules = [
     query: {
       presets: ["@babel/env", "@babel/react"],
     },
-  },
-  {
-    test: /\.(sa|sc|c)ss?/,
-    use: [
-      "style-loader",
-      MiniCSSExtractPlugin.loader,
-      "css-loader",
-      "scss-loader",
-      "sass-loader",
-    ],
-  },
+  }
 ];
 
 module.exports = {
