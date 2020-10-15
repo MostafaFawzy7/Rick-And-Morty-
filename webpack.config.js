@@ -7,7 +7,7 @@ const rules = [
     query: {
       presets: ["@babel/env", "@babel/react"],
     },
-  }
+  },
 ];
 
 module.exports = {

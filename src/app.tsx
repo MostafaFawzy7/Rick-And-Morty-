@@ -5,8 +5,9 @@ import { Link } from "@reach/router"
 
 const App = (props: any): JSX.Element => {
 
-    // styles Of the Component
+    const { state } = React.useContext(Store)
 
+    // styles Of the Component
     const Title = styled.h1`
         text-align: center;
         color: #28B;
@@ -18,8 +19,6 @@ const App = (props: any): JSX.Element => {
         padding: 5px 10px;
         margin: 10px
     `
-
-    const { state } = React.useContext(Store)
 
     return (
         <React.Fragment>
