@@ -6,9 +6,9 @@ import { Router, RouteComponentProps } from '@reach/router'
 import HomePage from './homePage'
 import FavPage from './favPage'
 
-const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps)=> props.pageComponent
+const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps) => props.pageComponent
 
-const root = document.getElementById('root') 
+const root = document.getElementById('root')
 
 ReactDOM.render(
     <StoreProvider>
