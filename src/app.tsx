@@ -34,6 +34,9 @@ const App = (props: any): JSX.Element => {
                     <OuterLink>
                         <Link to='/faves'>Favourite(s): {state.favourites.length}</Link>
                     </OuterLink>
+                    <OuterLink>
+                        <Link to='/likes'>Likes(s): {state.likes.length}</Link>
+                    </OuterLink>
                 </div>
             </header>
             {props.children}

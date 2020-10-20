@@ -5,6 +5,7 @@ import { StoreProvider } from './store'
 import { Router, RouteComponentProps } from '@reach/router'
 import HomePage from './homePage'
 import FavPage from './favPage'
+import LikePage from './likePage'
 
 const RouterPage = (props: { pageComponent: JSX.Element } & RouteComponentProps) => props.pageComponent
 
@@ -16,6 +17,7 @@ ReactDOM.render(
             <App path='/'>
                 <RouterPage pageComponent={<HomePage />} path='/' />
                 <RouterPage pageComponent={<FavPage />} path='/faves' />
+                <RouterPage pageComponent={<LikePage />} path='/likes' />
             </App>
         </Router>
     </StoreProvider>,

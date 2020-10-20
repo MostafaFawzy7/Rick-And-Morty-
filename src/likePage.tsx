@@ -1,20 +1,20 @@
 import React from 'react'
 import { Store } from './store'
 import { IEpisodeProps } from './interfaces'
-import { toggleFavAction } from './actions'
+import { toggleLikeAction } from './actions'
 import Spinner from './spinner'
 
 const EpisodeList = React.lazy<any>(() => import('./episodesList'))
 
-const FavPage = (): any => {
+const LikePage = (): any => {
     const { state, dispatch } = React.useContext(Store)
 
     const props: IEpisodeProps | any = {
-        episodes: state.favourites,
+        episodes: state.likes,
         store: { state, dispatch },
-        toggleFavAction,
+        toggleLikeAction,
+        likes: state.likes,
         favourites: state.favourites,
-        likes: state.likes
     }
 
     return (
@@ -28,4 +28,4 @@ const FavPage = (): any => {
     )
 }
 
-export default FavPage
+export default LikePage

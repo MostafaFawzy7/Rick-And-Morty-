@@ -1,7 +1,7 @@
 import React from 'react'
 import { Store } from './store'
 import { IEpisodeProps } from './interfaces'
-import { fetchDataAction, toggleFavAction } from './actions'
+import { fetchDataAction, toggleFavAction, toggleLikeAction } from './actions'
 import Spinner from './spinner'
 
 const EpisodeList = React.lazy<any>(() => import('./episodesList'))
@@ -17,7 +17,9 @@ const HomePage = () => {
         episodes: state.episodes,
         store: { state, dispatch },
         toggleFavAction,
-        favourites: state.favourites
+        favourites: state.favourites,
+        toggleLikeAction,
+        likes: state.likes
     }
 
     return (

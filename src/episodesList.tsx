@@ -2,7 +2,7 @@ import React from 'react'
 import { IEpisode } from './interfaces'
 
 const EpisodesList = (props: any): Array<JSX.Element> => {
-    const { episodes, toggleFavAction, favourites, store } = props
+    const { episodes, toggleFavAction, favourites, likes, toggleLikeAction, store } = props
     const { state, dispatch } = store
 
     return episodes.map((episode: IEpisode) => {
@@ -16,6 +16,9 @@ const EpisodesList = (props: any): Array<JSX.Element> => {
                     </div>
                     <button type="button" onClick={() => toggleFavAction(state, dispatch, episode)}>
                         {favourites.find((fav: IEpisode) => fav.id === episode.id) ? 'Unfav' : 'Fav'}
+                    </button>
+                    <button type="button" onClick={() => toggleLikeAction(state, dispatch, episode)}>
+                        {likes.find((like: IEpisode) => like.id === episode.id) ? 'Unlike' : 'Like'}
                     </button>
                 </section>
             </section>

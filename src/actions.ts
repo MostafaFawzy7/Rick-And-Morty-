@@ -32,3 +32,22 @@ export const toggleFavAction = (state: IState, dispatch: any, episode: IEpisode 
 
     return dispatch(dispatchObj)
 }
+
+export const toggleLikeAction = (state: IState, dispatch: any, episode: IEpisode | any): IAction => {
+    const episodeInLike = state.likes.includes(episode)
+    let dispatchObj = {
+        type: 'ADD_LIKE',
+        payload: episode
+    }
+    if (episodeInLike) {
+        const likeWithoutEpisode = state.likes.filter(
+            (like: IEpisode) => like.id !== episode.id
+        )
+        dispatchObj = {
+            type: 'REMOVE_LIKE',
+            payload: likeWithoutEpisode
+        }
+    }
+
+    return dispatch(dispatchObj)
+}
