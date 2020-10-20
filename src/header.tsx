@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const Header = styled.header`
     padding: 5px;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid rgb(219, 219, 219);
     width: 100%;
-    height: 40px;
+    position: sticky;
+    top: 0px;
+    background: #fff;
 `
 
 export const Logo = styled.div`
@@ -26,6 +28,7 @@ export const SearchPar = styled.div`
 
 export const Input = styled.input` 
     width: 60%;
+    height: 10px;
     margin: 0px auto;
     color: rgb(142, 142, 142);
     border-radius: 3px;

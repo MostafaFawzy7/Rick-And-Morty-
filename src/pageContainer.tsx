@@ -1,26 +1,28 @@
 import styled from 'styled-components'
 
 export const SeasonsNavigator = styled.div`
-    border-top: 1px solid #dbdbdb;
-    width: 100%;
-    margin: 10px 0 30px;
-    text-align: center
+    width: 50%;
+    margin: 10px 0 10px;
+    text-align: left;
+    display: inline-block
 `
 
 export const SeasonStyle = styled.span`
-    border-top: 1px solid #333;
-    margin: 0 5px;
+    margin: 0 5px 0 0;
     cursor: pointer;
-    padding: 0 5px 5px
+    padding: 5px;
+    background: red;
+    color: #fff;
+    border-radius: 2px
 `
 
 export const Paragraph = styled.p`
-    color: #ff5e00;
+    color: rgb(255, 94, 0);
     font-size: 25px;
     text-align: left;
-    width: 50%;
+    width: 100%;
     display: inline-block;
-    margin-top: 25px
+    margin: 40px 0 10px;
 `
 
 export const Indicator = styled.div`
@@ -45,4 +47,10 @@ export const FavsIndicator = styled.span`
     margin-left: 5px;
     border-radius: 2px;
     font-family: Arial, Helvetica, sans-serif;
+`
+
+export const Separator = styled.div`
+    border-bottom: solid 1px #d5d5d5;
+    width: 100%;
+    margin: 10px 0 40px
 `
