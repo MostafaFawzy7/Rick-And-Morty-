@@ -3,6 +3,7 @@ import { Store } from './store'
 import { IEpisodeProps } from './interfaces'
 import { toggleFavAction } from './actions'
 import Spinner from './spinner'
+import { Layout } from './layoutStyle'
 
 const EpisodeList = React.lazy<any>(() => import('./episodesList'))
 
@@ -20,9 +21,9 @@ const FavPage = (): any => {
     return (
         <React.Fragment>
             <React.Suspense fallback={<Spinner />}>
-                <section className="episode-layout">
+                <Layout>
                     <EpisodeList {...props} />
-                </section>
+                </Layout>
             </React.Suspense>
         </React.Fragment>
     )

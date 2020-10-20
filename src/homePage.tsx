@@ -27,9 +27,7 @@ const HomePage = () => {
         <React.Fragment>
             <React.Suspense fallback={<Spinner />}>
                 <Layout>
-                    <section className="episode-layout">
-                        <EpisodeList {...props} />
-                    </section>
+                    <EpisodeList {...props} />
                 </Layout>
             </React.Suspense>
         </React.Fragment>

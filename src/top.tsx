@@ -16,8 +16,8 @@ const Top = () => {
                 <SeasonStyle>Season 4</SeasonStyle>
             </SeasonsNavigator>
             <Indicator>
-                <FavsIndicator>Favourite (s) : {state.favourites.length}</FavsIndicator>
-                <LikesIndicator>Likes (s) : {state.likes.length}</LikesIndicator>
+                <FavsIndicator>Favourites : {state.favourites.length}</FavsIndicator>
+                <LikesIndicator>Likes : {state.likes.length}</LikesIndicator>
             </Indicator>
             <Separator></Separator>
         </React.Fragment>

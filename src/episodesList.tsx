@@ -1,6 +1,7 @@
 import React from 'react'
 import { IEpisode } from './interfaces'
-import { FavButton, LikeButton } from './episodeStyle'
+import { FavButton, LikeButton, FavButtonFilled, LikeButtonFilled, Thumbnail } from './episodeStyle'
+import { Box } from './layoutStyle'
 
 const EpisodesList = (props: any): Array<JSX.Element> => {
     const { episodes, toggleFavAction, favourites, likes, toggleLikeAction, store } = props
@@ -8,25 +9,27 @@ const EpisodesList = (props: any): Array<JSX.Element> => {
 
     return episodes.map((episode: IEpisode) => {
         return (
-            <section key={episode.id} className="episode-box">
-                <img src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
+            <Box key={episode.id} className="episode-box">
+                <Thumbnail src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
                 <div>{episode.name}</div>
                 <section style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div>
                         Season: {episode.season} Number: {episode.number}
                     </div>
-                    <button type="button" onClick={() => toggleFavAction(state, dispatch, episode)}>
-                        {favourites.find((fav: IEpisode) => fav.id === episode.id)
-                            ? <FavButton><i className="fa fa-heart" aria-hidden="true"></i></FavButton>
-                            : <i className="fa fa-heart" aria-hidden="true"></i>}
-                    </button>
-                    <button type="button" onClick={() => toggleLikeAction(state, dispatch, episode)}>
-                        {likes.find((like: IEpisode) => like.id === episode.id)
-                            ? <LikeButton><i className="fa fa-thumbs-up" aria-hidden="true"></i></LikeButton>
-                            : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
-                    </button>
+                    <div>
+                        <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
+                            {favourites.find((fav: IEpisode) => fav.id === episode.id)
+                                ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
+                                : <i className="fa fa-heart" aria-hidden="true"></i>}
+                        </FavButton>
+                        <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
+                            {likes.find((like: IEpisode) => like.id === episode.id)
+                                ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>
+                                : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
+                        </LikeButton>
+                    </div>
                 </section>
-            </section>
+            </Box>
         )
     })
 }

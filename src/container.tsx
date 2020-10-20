@@ -5,6 +5,7 @@ export const Body = styled.body`
     paddding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    direction: ltr;
 `
 
 export const Container = styled.div`
