@@ -1,45 +1,39 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Store } from './store'
 import { Link } from "@reach/router"
+import { Container } from './container'
+import { Header, Logo, SearchPar, Icons, Input } from './header'
+import { SeasonsNavigator, SeasonStyle, Paragraph } from './pageContainer'
 
 const App = (props: any): JSX.Element => {
 
     const { state } = React.useContext(Store)
 
-    // styles Of the Component
-    const Title = styled.h1`
-        text-align: center;
-        color: #28B;
-    `
-    const OuterLink = styled.span`
-        color: #DDD;
-        background: #333;
-        font-size: 20px;
-        padding: 5px 10px;
-        margin: 10px
-    `
-
     return (
         <React.Fragment>
-            <header className="header">
-                <div>
-                    <Title>Rick and morty</Title>
-                    <p>Pick your favourite episode!!</p>
-                </div>
-                <div>
-                    <OuterLink>
+            <Header>
+                <Container>
+                    <Link to='/'><Logo>Rick and morty</Logo></Link>
+                    <SearchPar>
+                        <Input type="text" placeholder='Search' />
+                    </SearchPar>
+                    <Icons>
                         <Link to='/'>Home</Link>
-                    </OuterLink>
-                    <OuterLink>
                         <Link to='/faves'>Favourite(s): {state.favourites.length}</Link>
-                    </OuterLink>
-                    <OuterLink>
                         <Link to='/likes'>Likes(s): {state.likes.length}</Link>
-                    </OuterLink>
-                </div>
-            </header>
-            {props.children}
+                    </Icons>
+                </Container>
+            </Header>
+            <Container>
+                <Paragraph>Pick Your Favourite Episode !!</Paragraph>
+                <SeasonsNavigator>
+                    <SeasonStyle>Season 1</SeasonStyle>
+                    <SeasonStyle>Season 2</SeasonStyle>
+                    <SeasonStyle>Season 3</SeasonStyle>
+                    <SeasonStyle>Season 4</SeasonStyle>
+                </SeasonsNavigator>
+                {props.children}
+            </Container>
         </React.Fragment>
     )
 }
