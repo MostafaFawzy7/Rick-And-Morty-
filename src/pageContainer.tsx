@@ -10,8 +10,8 @@ export const SeasonsNavigator = styled.div`
 export const SeasonStyle = styled.span`
     margin: 0 5px 0 0;
     cursor: pointer;
-    padding: 5px;
-    background: red;
+    padding: 5px 10px;
+    background: #478b47;
     color: #fff;
     border-radius: 2px
 `
@@ -32,7 +32,7 @@ export const Indicator = styled.div`
 `
 
 export const LikesIndicator = styled.span`
-    background: green;
+    background: rgb(34 94 166);
     color: #fff;
     padding: 7px 15px;
     margin-left: 5px;
@@ -41,7 +41,7 @@ export const LikesIndicator = styled.span`
 `
 
 export const FavsIndicator = styled.span`
-    background: #28B;
+    background: rgb(191 55 55);
     color: #fff;
     padding: 7px 15px;
     margin-left: 5px;
