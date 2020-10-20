@@ -24,7 +24,8 @@ export const SearchPar = styled.div`
     text-align: center;
 `
 
-export const Input = styled.input`  
+export const Input = styled.input` 
+    width: 60%;
     margin: 0px auto;
     color: rgb(142, 142, 142);
     border-radius: 3px;
@@ -43,4 +44,10 @@ export const Icons = styled.div`
     display: inline-block;
     width: calc(100% - 700px);
     text-align: right;
+`
+
+export const Icon = styled.span`
+    margin-left: 35px;
+    font-size: 25px;
+    color: #333
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const SeasonsNavigator = styled.div`
     border-top: 1px solid #dbdbdb;
     width: 100%;
-    margin: 30px 0;
+    margin: 10px 0 30px;
     text-align: center
 `
 
@@ -15,12 +15,34 @@ export const SeasonStyle = styled.span`
 `
 
 export const Paragraph = styled.p`
-    color: transparent;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    background-clip: text;
-    -webkit-background-clip: text;
+    color: #ff5e00;
     font-size: 25px;
     text-align: left;
-    width: 50%
-` 
+    width: 50%;
+    display: inline-block;
+    margin-top: 25px
+`
+
+export const Indicator = styled.div`
+    width: 50%;
+    display: inline-block;
+    text-align: right
+`
+
+export const LikesIndicator = styled.span`
+    background: green;
+    color: #fff;
+    padding: 7px 15px;
+    margin-left: 5px;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+`
+
+export const FavsIndicator = styled.span`
+    background: #28B;
+    color: #fff;
+    padding: 7px 15px;
+    margin-left: 5px;
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+`
