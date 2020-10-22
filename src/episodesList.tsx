@@ -14,7 +14,8 @@ const EpisodesList = (props: any): Array<JSX.Element> => {
                 <div>{episode.name}</div>
                 <section style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div>
-                        Season: {episode.season} Number: {episode.number}
+                        <div>Season: {episode.season}</div>
+                        <div>Episode: {episode.number}</div>
                     </div>
                     <div>
                         <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
