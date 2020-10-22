@@ -8,7 +8,8 @@ const Footer = () => {
         font-size: 15px;
         color: #DDD;
         padding: 10px;
-        text-align: center
+        text-align: center;
+        margin-top: 70px
     `
 
     return (

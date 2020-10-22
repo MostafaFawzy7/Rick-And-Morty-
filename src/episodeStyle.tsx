@@ -27,5 +27,7 @@ export const LikeButtonFilled = styled.i`
 `
 
 export const Thumbnail = styled.img`
-    width: 100%;
+    height: 280px;
+    max-width: 100%;
+    width: auto;
 `

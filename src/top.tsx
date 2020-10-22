@@ -10,6 +10,7 @@ const Top = () => {
         <React.Fragment>
             <Paragraph>Pick Your Favourite Episode !!</Paragraph>
             <SeasonsNavigator>
+                <SeasonStyle>All</SeasonStyle>
                 <SeasonStyle>Season 1</SeasonStyle>
                 <SeasonStyle>Season 2</SeasonStyle>
                 <SeasonStyle>Season 3</SeasonStyle>

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Body = styled.body`
-    // overflow-x: hidden;
     paddding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
