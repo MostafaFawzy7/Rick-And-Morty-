@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SeasonsNavigator = styled.div`
     width: 50%;
-    margin: 10px 0 10px;
+    margin: 20px 0;
     text-align: left;
     display: inline-block
 `
@@ -20,7 +20,7 @@ export const Paragraph = styled.p`
     color: rgb(255, 94, 0);
     font-size: 25px;
     text-align: left;
-    width: 100%;
+    width: 50%;
     display: inline-block;
     margin: 40px 0 10px;
 `
@@ -52,5 +52,5 @@ export const FavsIndicator = styled.span`
 export const Separator = styled.div`
     border-bottom: solid 1px #d5d5d5;
     width: 100%;
-    margin: 10px 0 40px
+    margin: 10px 0;
 `

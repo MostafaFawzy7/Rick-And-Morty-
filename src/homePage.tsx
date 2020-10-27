@@ -3,7 +3,6 @@ import { Store } from './store'
 import { IEpisodeProps } from './interfaces'
 import { fetchDataAction, toggleFavAction, toggleLikeAction } from './actions'
 import Spinner from './spinner'
-import { Layout } from './layoutStyle'
 
 const EpisodeList = React.lazy<any>(() => import('./episodesList'))
 
@@ -26,9 +25,7 @@ const HomePage = () => {
     return (
         <React.Fragment>
             <React.Suspense fallback={<Spinner />}>
-                <Layout>
-                    <EpisodeList {...props} />
-                </Layout>
+                <EpisodeList {...props} />
             </React.Suspense>
         </React.Fragment>
     )
