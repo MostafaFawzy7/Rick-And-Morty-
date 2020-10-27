@@ -26,6 +26,7 @@ export interface IEpisode {
     runtime: number
     season: number
     summary: string
+    type: string
     url: string
 }
 

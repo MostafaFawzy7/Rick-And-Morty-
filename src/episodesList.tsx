@@ -16,6 +16,10 @@ const EpisodesList = (props: any): Array<JSX.Element> => {
                     <div>
                         <div>Season: {episode.season}</div>
                         <div>Episode: {episode.number}</div>
+                        <div>{episode.airdate}</div>
+                        <div>{episode.airtime}</div>
+                        <div>{episode.type}</div>
+                        <a href={episode.url} target='_blank'>Watch</a>
                     </div>
                     <div>
                         <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
