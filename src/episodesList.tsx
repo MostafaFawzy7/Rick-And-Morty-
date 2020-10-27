@@ -1,6 +1,9 @@
 import React from 'react'
 import { IEpisode } from './interfaces'
-import { FavButton, LikeButton, FavButtonFilled, LikeButtonFilled, Thumbnail } from './episodeStyle'
+import {
+    FavButton, LikeButton, FavButtonFilled, LikeButtonFilled, Thumbnail, Title, SMthumb,
+    Type, Time, Summary
+} from './episodeStyle'
 import { SeasonsNavigator, SeasonStyle } from './pageContainer'
 import { Layout } from './layoutStyle'
 import { Box } from './layoutStyle'
@@ -30,15 +33,16 @@ const EpisodesList = (props: any): any => {
                     return (
                         <Box key={episode.id} className="episode-box">
                             <Thumbnail src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
-                            <div>{episode.name}</div>
-                            <section style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Title>{episode.name}</Title>
+                            <SMthumb src={episode.image.medium} />
+                            <section>
                                 <div>
                                     <div>Season: {episode.season}</div>
                                     <div>Episode: {episode.number}</div>
                                     <div>{episode.airdate}</div>
-                                    <div>{episode.airtime}</div>
-                                    <div>{episode.type}</div>
-                                    <div>{trim(summary, 20)} ...</div>
+                                    <Time>{episode.airtime}</Time>
+                                    <Type>{episode.type}</Type>
+                                    <Summary>{trim(summary, 15)} ...</Summary>
                                     <a href={episode.url} target='_blank'>Watch</a>
                                 </div>
                                 <div>

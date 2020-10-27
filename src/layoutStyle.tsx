@@ -11,10 +11,22 @@ export const Layout = styled.section`
 export const Box = styled.section`
     width: calc(32% - 7px);
     margin: 20px 30px;
+    position: relative;
     &:nth-child(n) {
         margin-left: 0
     }
     &:nth-child(3n) {
         margin-right: 0
+    }
+    &:before {
+        content: "";
+        width: 100%;
+        height: 72.5%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: rgb(255 255 255 / 55%);
+        border-radius: 5px;
+        z-index: 0;
     }
 `

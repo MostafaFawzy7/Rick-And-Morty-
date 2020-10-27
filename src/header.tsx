@@ -7,6 +7,7 @@ export const Header = styled.header`
     position: sticky;
     top: 0px;
     background: #fff;
+    z-index: 1;
 `
 
 export const Logo = styled.div`
