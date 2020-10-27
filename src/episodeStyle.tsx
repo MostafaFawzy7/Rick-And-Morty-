@@ -30,4 +30,5 @@ export const Thumbnail = styled.img`
     height: 280px;
     max-width: 100%;
     width: auto;
+    border-radius: 20px
 `
