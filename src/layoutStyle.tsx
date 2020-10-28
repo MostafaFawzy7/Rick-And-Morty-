@@ -12,6 +12,7 @@ export const Box = styled.section`
     width: calc(32% - 7px);
     margin: 20px 30px;
     position: relative;
+    color: #FFF;
     &:nth-child(n) {
         margin-left: 0
     }
@@ -21,11 +22,11 @@ export const Box = styled.section`
     &:before {
         content: "";
         width: 100%;
-        height: 72.5%;
+        height: 82%;
         position: absolute;
         top: 0px;
         left: 0px;
-        background: rgb(255 255 255 / 55%);
+        background: rgb(41 41 41 / 55%);
         border-radius: 5px;
         z-index: 0;
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { IEpisode } from './interfaces'
 import {
     FavButton, LikeButton, FavButtonFilled, LikeButtonFilled, Thumbnail, Title, SMthumb,
-    Type, Time, Summary
+    Type, Time, Summary, Season, Episode, Date, Reaction, Watch
 } from './episodeStyle'
 import { SeasonsNavigator, SeasonStyle } from './pageContainer'
 import { Layout } from './layoutStyle'
@@ -37,26 +37,26 @@ const EpisodesList = (props: any): any => {
                             <SMthumb src={episode.image.medium} />
                             <section>
                                 <div>
-                                    <div>Season: {episode.season}</div>
-                                    <div>Episode: {episode.number}</div>
-                                    <div>{episode.airdate}</div>
                                     <Time>{episode.airtime}</Time>
                                     <Type>{episode.type}</Type>
-                                    <Summary>{trim(summary, 15)} ...</Summary>
-                                    <a href={episode.url} target='_blank'>Watch</a>
+                                    <Summary>{trim(summary, 10)} ...</Summary>
+                                    <Episode>Episode: {episode.number}</Episode>
+                                    <Season>Season: {episode.season}</Season>
+                                    <Date>{episode.airdate}</Date>
                                 </div>
-                                <div>
+                                <Reaction>
                                     <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
                                         {favourites.find((fav: IEpisode) => fav.id === episode.id)
                                             ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
                                             : <i className="fa fa-heart" aria-hidden="true"></i>}
                                     </FavButton>
+                                    <Watch href={episode.url} target='_blank'>Watch</Watch>
                                     <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
                                         {likes.find((like: IEpisode) => like.id === episode.id)
                                             ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>
                                             : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
                                     </LikeButton>
-                                </div>
+                                </Reaction>
                             </section>
                         </Box>
                     )
