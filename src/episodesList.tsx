@@ -28,7 +28,7 @@ const EpisodesList = (props: any): any => {
             </SeasonsNavigator>
 
             <SearchPar>
-                <Input type="text" placeholder='Search' />
+                <Input type="text" placeholder='Search' onChange={e => setEpis(e.target.value)} />
             </SearchPar>
 
             <Layout>
@@ -50,12 +50,12 @@ const EpisodesList = (props: any): any => {
                                     <Date>{episode.airdate}</Date>
                                 </div>
                                 <Reaction>
+                                    <Watch href={episode.url} target='_blank'>Watch</Watch>
                                     <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
                                         {favourites.find((fav: IEpisode) => fav.id === episode.id)
                                             ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
                                             : <i className="fa fa-heart" aria-hidden="true"></i>}
                                     </FavButton>
-                                    <Watch href={episode.url} target='_blank'>Watch</Watch>
                                     <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
                                         {likes.find((like: IEpisode) => like.id === episode.id)
                                             ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>

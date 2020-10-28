@@ -93,26 +93,29 @@ export const Reaction = styled.div`
 `
 
 export const Watch = styled.a`
-    margin-left: 25px;
+    margin-left: 0;
     text-decoration: none;
-    color: #FFF;
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    background: #0c770c;
+    background: rgb(12, 119, 12);
     padding: 5px;
-    border-radius: 3px
+    border-radius: 3px;
+    float: left;
 `
 
 export const FavButton = styled.i`
-    color: #333;
+    color: rgb(142, 142, 142);
     cursor: pointer;
     font-size: 25px;
+    float: right;
 `
 
 export const LikeButton = styled.i`
-    color: #333;
+    color: rgb(142, 142, 142);
     cursor: pointer;
     font-size: 25px;
-    margin-left: 25px;
+    margin-right: 10px;
+    float: right;
 `
 
 export const FavButtonFilled = styled.i`
