@@ -69,7 +69,7 @@ export const Reaction = styled.div`
 `
 
 export const Watch = styled.a`
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
     color: #FFF;
     font-weight: bold;

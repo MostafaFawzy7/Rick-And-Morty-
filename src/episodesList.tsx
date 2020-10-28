@@ -11,6 +11,7 @@ import { Box } from './layoutStyle'
 const EpisodesList = (props: any): any => {
     const { episodes, toggleFavAction, favourites, likes, toggleLikeAction, store } = props
     const { state, dispatch } = store
+    const [episList, setEpis] = React.useState(episodes)
 
     const trim = (str, no_words) => {
         return str.split(" ").splice(0, no_words).join(" ");
@@ -19,15 +20,15 @@ const EpisodesList = (props: any): any => {
     return (
         <React.Fragment>
             <SeasonsNavigator>
-                <SeasonStyle>All</SeasonStyle>
-                <SeasonStyle>Season 1</SeasonStyle>
-                <SeasonStyle>Season 2</SeasonStyle>
-                <SeasonStyle>Season 3</SeasonStyle>
-                <SeasonStyle>Season 4</SeasonStyle>
+                <SeasonStyle onClick={() => setEpis(episodes)}>All</SeasonStyle>
+                <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 1))}>Season 1</SeasonStyle>
+                <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 2))}>Season 2</SeasonStyle>
+                <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 3))}>Season 3</SeasonStyle>
+                <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 4))}>Season 4</SeasonStyle>
             </SeasonsNavigator>
 
             <Layout>
-                {episodes.map((episode: IEpisode) => {
+                {episList.map((episode: IEpisode) => {
                     const summary = JSON.stringify(episode.summary).replace('<p>', '').replace('</p>', '')
 
                     return (

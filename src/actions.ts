@@ -5,7 +5,6 @@ export const fetchDataAction = (dispatch: any) => {
     fetch(URL)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             return dispatch({
                 type: 'FETCH_DATA',
                 payload: data._embedded.episodes
