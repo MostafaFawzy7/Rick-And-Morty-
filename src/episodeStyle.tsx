@@ -97,8 +97,8 @@ export const Watch = styled.a`
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    background: rgb(12, 119, 12);
-    padding: 5px;
+    background: rgb(255, 94, 0);
+    padding: 5px 10px;
     border-radius: 3px;
     float: left;
 `

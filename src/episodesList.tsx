@@ -13,6 +13,10 @@ const EpisodesList = (props: any): any => {
     const { state, dispatch } = store
     const [episList, setEpis] = React.useState(episodes)
 
+    const handleChange = e => {
+        setEpis(e.target.value);
+    }
+
     const trim = (str, no_words) => {
         return str.split(" ").splice(0, no_words).join(" ");
     }
@@ -28,7 +32,7 @@ const EpisodesList = (props: any): any => {
             </SeasonsNavigator>
 
             <SearchPar>
-                <Input type="text" placeholder='Search' onChange={e => setEpis(e.target.value)} />
+                <Input type="text" placeholder='Search' onChange={handleChange} />
             </SearchPar>
 
             <Layout>
