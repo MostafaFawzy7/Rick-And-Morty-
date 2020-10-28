@@ -2,7 +2,7 @@ import React from 'react'
 import { IEpisode } from './interfaces'
 import {
     FavButton, LikeButton, FavButtonFilled, LikeButtonFilled, Thumbnail, Title, SMthumb,
-    Type, Time, Summary, Season, Episode, Date, Reaction, Watch
+    Type, Time, Summary, Season, Episode, Date, Reaction, Watch, SearchPar, Input
 } from './episodeStyle'
 import { SeasonsNavigator, SeasonStyle } from './pageContainer'
 import { Layout } from './layoutStyle'
@@ -26,6 +26,10 @@ const EpisodesList = (props: any): any => {
                 <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 3))}>Season 3</SeasonStyle>
                 <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 4))}>Season 4</SeasonStyle>
             </SeasonsNavigator>
+
+            <SearchPar>
+                <Input type="text" placeholder='Search' />
+            </SearchPar>
 
             <Layout>
                 {episList.map((episode: IEpisode) => {

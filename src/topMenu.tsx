@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "@reach/router"
 import { Container } from './container'
-import { Header, Logo, SearchPar, Icons, Input, Icon } from './header'
+import { Header, Logo, Icons, Icon } from './header'
 
 const TopMenu = () => {
     return (
@@ -9,9 +9,6 @@ const TopMenu = () => {
             <Header>
                 <Container>
                     <Link to='/'><Logo>Rick and morty</Logo></Link>
-                    <SearchPar>
-                        <Input type="text" placeholder='Search' />
-                    </SearchPar>
                     <Icons>
                         <Link to='/'><Icon><i className="fa fa-home" aria-hidden="true"></i></Icon></Link>
                         <Link to='/faves'><Icon><i className="fa fa-heart" aria-hidden="true"></i></Icon></Link>

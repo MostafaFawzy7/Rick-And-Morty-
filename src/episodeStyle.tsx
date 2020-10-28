@@ -1,5 +1,29 @@
 import styled from 'styled-components'
 
+export const SearchPar = styled.div`
+    display: inline-block;  
+    width: 500px;
+    margin: 0 auto;
+    text-align: right;
+`
+
+export const Input = styled.input` 
+    width: 60%;
+    height: 10px;
+    margin: 0px auto;
+    color: rgb(142, 142, 142);
+    border-radius: 3px;
+    cursor: text;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 7px;
+    text-align: center;
+    border-radius: 1px;
+    border: none;
+    background: #f0f0f0;
+    border: solid 1px #d5d5d5;
+`
+
 export const Thumbnail = styled.img`
     height: 280px;
     max-width: 100%;

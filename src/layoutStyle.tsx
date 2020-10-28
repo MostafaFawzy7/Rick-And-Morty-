@@ -22,7 +22,7 @@ export const Box = styled.section`
     &:before {
         content: "";
         width: 100%;
-        height: 82%;
+        height: 82.5%;
         position: absolute;
         top: 0px;
         left: 0px;
