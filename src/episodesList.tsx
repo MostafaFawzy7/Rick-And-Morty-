@@ -39,7 +39,7 @@ const EpisodesList = (props: any): any => {
                                 <div>
                                     <Time>{episode.airtime}</Time>
                                     <Type>{episode.type}</Type>
-                                    <Summary>{trim(summary, 10)} ...</Summary>
+                                    <Summary>{summary !== 'null' ? trim(summary, 10) : 'There is no summary !!'} ...</Summary>
                                     <Episode>Episode: {episode.number}</Episode>
                                     <Season>Season: {episode.season}</Season>
                                     <Date>{episode.airdate}</Date>
