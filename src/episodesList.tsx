@@ -31,45 +31,80 @@ const EpisodesList = (props: any): any => {
                 <SeasonStyle onClick={() => setEpis(episodes.filter(e => e.season === 4))}>Season 4</SeasonStyle>
             </SeasonsNavigator>
 
-            <SearchPar>
-                <Input type="text" placeholder='Search' onChange={handleChange} />
-            </SearchPar>
+            {/* <SearchPar>
+                <Input type="text" placeholder='Search' onChange={e => handleChange(e.target.value)} />
+            </SearchPar> */}
 
             <Layout>
-                {episList.map((episode: IEpisode) => {
-                    const summary = JSON.stringify(episode.summary).replace('<p>', '').replace('</p>', '')
+                {
+                    episList.length != 0 ? episList.map((episode: IEpisode) => {
+                        const summary = JSON.stringify(episode.summary).replace('<p>', '').replace('</p>', '')
 
-                    return (
-                        <Box key={episode.id} className="episode-box">
-                            <Thumbnail src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
-                            <Title>{episode.name}</Title>
-                            <SMthumb src={episode.image.medium} />
-                            <section>
-                                <div>
-                                    <Time>{episode.airtime}</Time>
-                                    <Type>{episode.type}</Type>
-                                    <Summary>{summary !== 'null' ? trim(summary, 10) : 'There is no summary !!'} ...</Summary>
-                                    <Episode>Episode: {episode.number}</Episode>
-                                    <Season>Season: {episode.season}</Season>
-                                    <Date>{episode.airdate}</Date>
-                                </div>
-                                <Reaction>
-                                    <Watch href={episode.url} target='_blank'>Watch</Watch>
-                                    <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
-                                        {favourites.find((fav: IEpisode) => fav.id === episode.id)
-                                            ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
-                                            : <i className="fa fa-heart" aria-hidden="true"></i>}
-                                    </FavButton>
-                                    <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
-                                        {likes.find((like: IEpisode) => like.id === episode.id)
-                                            ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>
-                                            : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
-                                    </LikeButton>
-                                </Reaction>
-                            </section>
-                        </Box>
-                    )
-                })}
+                        return (
+                            <Box key={episode.id} className="episode-box">
+                                <Thumbnail src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
+                                <Title>{episode.name}</Title>
+                                <SMthumb src={episode.image.medium} />
+                                <section>
+                                    <div>
+                                        <Time>{episode.airtime}</Time>
+                                        <Type>{episode.type}</Type>
+                                        <Summary>{summary !== 'null' ? trim(summary, 10) : 'There is no summary !!'} ...</Summary>
+                                        <Episode>Episode: {episode.number}</Episode>
+                                        <Season>Season: {episode.season}</Season>
+                                        <Date>{episode.airdate}</Date>
+                                    </div>
+                                    <Reaction>
+                                        <Watch href={episode.url} target='_blank'>Watch</Watch>
+                                        <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
+                                            {favourites.find((fav: IEpisode) => fav.id === episode.id)
+                                                ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
+                                                : <i className="fa fa-heart" aria-hidden="true"></i>}
+                                        </FavButton>
+                                        <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
+                                            {likes.find((like: IEpisode) => like.id === episode.id)
+                                                ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>
+                                                : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
+                                        </LikeButton>
+                                    </Reaction>
+                                </section>
+                            </Box>
+                        )
+                    }) : episodes.map((episode: IEpisode) => {
+                        const summary = JSON.stringify(episode.summary).replace('<p>', '').replace('</p>', '')
+
+                        return (
+                            <Box key={episode.id} className="episode-box">
+                                <Thumbnail src={episode.image.medium} alt={`Rick and Morty ${episode.name}`} />
+                                <Title>{episode.name}</Title>
+                                <SMthumb src={episode.image.medium} />
+                                <section>
+                                    <div>
+                                        <Time>{episode.airtime}</Time>
+                                        <Type>{episode.type}</Type>
+                                        <Summary>{summary !== 'null' ? trim(summary, 10) : 'There is no summary !!'} ...</Summary>
+                                        <Episode>Episode: {episode.number}</Episode>
+                                        <Season>Season: {episode.season}</Season>
+                                        <Date>{episode.airdate}</Date>
+                                    </div>
+                                    <Reaction>
+                                        <Watch href={episode.url} target='_blank'>Watch</Watch>
+                                        <FavButton onClick={() => toggleFavAction(state, dispatch, episode)}>
+                                            {favourites.find((fav: IEpisode) => fav.id === episode.id)
+                                                ? <FavButtonFilled className="fa fa-heart" aria-hidden="true"></FavButtonFilled>
+                                                : <i className="fa fa-heart" aria-hidden="true"></i>}
+                                        </FavButton>
+                                        <LikeButton onClick={() => toggleLikeAction(state, dispatch, episode)}>
+                                            {likes.find((like: IEpisode) => like.id === episode.id)
+                                                ? <LikeButtonFilled className="fa fa-thumbs-up" aria-hidden="true"></LikeButtonFilled>
+                                                : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
+                                        </LikeButton>
+                                    </Reaction>
+                                </section>
+                            </Box>
+                        )
+                    })
+                }
             </Layout>
         </React.Fragment>
     )
